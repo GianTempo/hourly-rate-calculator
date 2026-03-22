@@ -4,7 +4,7 @@ import { useState } from "react";
 function Calculator() {
   const PESOS_MINUTE_RATE = 200;
   const PESOS_HOUR_RATE = PESOS_MINUTE_RATE * 60;
-  const USD_MINUTE_RATE = 2;
+  const USD_MINUTE_RATE = 0.4;
   const USD_HOUR_RATE = USD_MINUTE_RATE * 60;
   const HOUR_COMMAND = '!addh'
   const MINUTE_COMMAND = '!addm'
@@ -57,7 +57,14 @@ function Calculator() {
 	}
 
   return (
-		<>
+		<div className="pb-5">
+			<div className="mb-3">
+				Para referencia:
+				<br />- Una hora en pesos es <b>${PESOS_HOUR_RATE}</b> y una hora en
+				dólares es <b>USD{USD_HOUR_RATE}</b>.
+				<br />- Un minuto en pesos es <b>${PESOS_MINUTE_RATE}</b> y un minuto en
+				dólares es <b>USD{USD_MINUTE_RATE}</b>.
+			</div>
 			<div className="mb-3">
 				<h5>Seleccionar moneda:</h5>
 				<div>
@@ -86,13 +93,15 @@ function Calculator() {
 				</div>
 			</div>
 			{currency !== "" && (
-				<input
-					type="number"
-					className="form-control form-control-lg mb-4 w-25"
-          placeholder="Cantidad donada"
-          value={amount}
-					onChange={(handleInputChange)}
-				/>
+				<div className="col-6 col-md-4">
+					<input
+						type="number"
+						className="form-control form-control-lg mb-4"
+						placeholder="Cantidad donada"
+						value={amount}
+						onChange={handleInputChange}
+					/>
+				</div>
 			)}
 			{command && minutesOrHours > 0 && (
 				<div>
@@ -102,7 +111,7 @@ function Calculator() {
 					</button>
 				</div>
 			)}
-		</>
+		</div>
 	)
 
 }
