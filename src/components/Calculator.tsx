@@ -48,6 +48,14 @@ function Calculator() {
     setCurrency(currency);
   }
 
+	const copyToClipboard = async () => {
+		try {
+			await navigator.clipboard.writeText(command)
+		} catch (err) {
+			console.error("Error al copiar: ", err)
+		}
+	}
+
   return (
 		<>
 			<div className="mb-3">
@@ -86,7 +94,14 @@ function Calculator() {
 					onChange={(handleInputChange)}
 				/>
 			)}
-			{command && minutesOrHours > 0 && <p>El comando a usar es: {command}</p>}
+			{command && minutesOrHours > 0 && (
+				<div>
+					<h3 className="mb-4">El comando a usar es: {command}</h3>
+					<button className="btn btn-primary btn-lg" onClick={copyToClipboard}>
+						Copiar comando
+					</button>
+				</div>
+			)}
 		</>
 	)
 
