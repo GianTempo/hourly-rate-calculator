@@ -3,6 +3,6 @@ import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	base: "https://giantempo.github.io/hourly-rate-calculator/",
+	base: "https://giantempo.github.io/hourly-rate-calculator",
 	plugins: [react()],
 })
