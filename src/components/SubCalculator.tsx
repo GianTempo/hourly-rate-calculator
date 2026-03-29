@@ -11,13 +11,13 @@ function SubCalculator() {
   const handleChange = (event: any) => {
     const amount = event.target.value;
     setSubAmount(amount);
-    const minutes = amount * SUB_RATE;
+    const minutes = Math.floor(amount * SUB_RATE);
     
     if (minutes % 60 === 0) {
       const hours = minutes / 60;
-      setBitsCommand(HOUR_COMMAND + " " + hours)
+      setSubCommand(HOUR_COMMAND + " " + hours)
     } else {
-      setBitsCommand(MINUTE_COMMAND + " " + minutes)
+      setSubCommand(MINUTE_COMMAND + " " + minutes)
     }
   }
   

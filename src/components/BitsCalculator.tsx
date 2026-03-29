@@ -11,7 +11,7 @@ function BitsCalculator() {
   const handleChange = (event: any) => {
     const amount = event.target.value;
     setBitsAmount(amount);
-    const minutes = amount / BITS_RATE;
+    const minutes = Math.floor(amount / BITS_RATE);
     
     if (minutes % 60 === 0) {
       const hours = minutes / 60;
