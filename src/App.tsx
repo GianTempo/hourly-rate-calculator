@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import './App.css'
 import Calculator from './components/Calculator'
+import BitsCalculator from './components/BitsCalculator'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -16,6 +16,7 @@ function App() {
         </div>
         <div className="body">
           <Calculator></Calculator>
+          <BitsCalculator></BitsCalculator>
         </div>
       </div>
     </>
