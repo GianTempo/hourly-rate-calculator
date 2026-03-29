@@ -31,7 +31,7 @@ function SubCalculator() {
   
   return (
     <div className="pb-5">
-       Calcular bits:
+       Calcular Subs:
       <div className="col-6 col-md-4">
 		  			<input
 			  			type="number"
