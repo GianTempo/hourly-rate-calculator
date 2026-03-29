@@ -41,7 +41,7 @@ function SubCalculator() {
 			  			onChange={handleChange}
 				  	/>
 				  </div>
-      {subAmount && subCommand && (
+      {subAmount > 0 && subCommand && (
        <div>
 				   	<h3 className="mb-4">El comando a usar es: {subCommand}</h3>
 				   	<button className="btn btn-primary btn-lg" onClick={copyToClipboard}>

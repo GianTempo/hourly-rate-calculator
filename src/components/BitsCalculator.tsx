@@ -41,7 +41,7 @@ function BitsCalculator() {
 			  			onChange={handleChange}
 				  	/>
 				  </div>
-      {bitsAmount && bitsCommand && (
+      {bitsAmount > 0 && bitsCommand && (
        <div>
 				   	<h3 className="mb-4">El comando a usar es: {bitsCommand}</h3>
 				   	<button className="btn btn-primary btn-lg" onClick={copyToClipboard}>
