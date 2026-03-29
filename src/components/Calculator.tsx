@@ -2,8 +2,8 @@ import { useState } from "react";
 
 
 function Calculator() {
-  const PESOS_MINUTE_RATE = PESOS_HOUR_RATE / 60;
   const PESOS_HOUR_RATE = 20000;
+  const PESOS_MINUTE_RATE = PESOS_HOUR_RATE / 60;
   const USD_MINUTE_RATE = 0.4;
   const USD_HOUR_RATE = USD_MINUTE_RATE * 60;
   const HOUR_COMMAND = '!addh'

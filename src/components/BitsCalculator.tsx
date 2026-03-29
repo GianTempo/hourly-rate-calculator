@@ -15,9 +15,9 @@ function BitsCalculator() {
     
     if (minutes % 60 === 0) {
       const hours = minutes / 60;
-      setBitsCommand(HOURS_COMMAND + " " + hours)
+      setBitsCommand(HOUR_COMMAND + " " + hours)
     } else {
-      setBitsCommand(MINUTES_COMMAND + " " + minutes)
+      setBitsCommand(MINUTE_COMMAND + " " + minutes)
     }
   }
   
@@ -38,10 +38,10 @@ function BitsCalculator() {
 				  		className="form-control form-control-lg mb-4"
 		  				placeholder="Cantidad DE BITS donados"
 				  		value={bitsAmount}
-			  			onChange={handleInputChange}
+			  			onChange={handleChange}
 				  	/>
 				  </div>
-      {amount && command && (
+      {bitsAmount && bitsCommand && (
        <div>
 				   	<h3 className="mb-4">El comando a usar es: {bitsCommand}</h3>
 				   	<button className="btn btn-primary btn-lg" onClick={copyToClipboard}>
