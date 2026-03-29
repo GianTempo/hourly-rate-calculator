@@ -18,7 +18,7 @@ function Calculator() {
   const handleInputChange = (event: any) => {
     setAmount(event.target.value);
     const calcAmount = event.target.value;
-    if (currency === 'pesos') {
+    
       if (calcAmount % PESOS_HOUR_RATE === 0) {
         const commandAmount = calcAmount / PESOS_HOUR_RATE;
         setMinutesOrHours(commandAmount);
@@ -28,18 +28,6 @@ function Calculator() {
         setMinutesOrHours(minutesAmount);
         setCommand(MINUTE_COMMAND + " " + minutesAmount)
       }
-    }
-    else if (currency === 'usd') {
-      if (calcAmount % USD_HOUR_RATE === 0) {
-				const commandAmount = calcAmount / USD_HOUR_RATE
-				setMinutesOrHours(commandAmount)
-				setCommand(HOUR_COMMAND + " " + commandAmount)
-			} else {
-				const minutesAmount = Math.floor(calcAmount / USD_MINUTE_RATE)
-				setMinutesOrHours(minutesAmount)
-				setCommand(MINUTE_COMMAND + " " + minutesAmount)
-			}
-    }
   }
 
   const setCurrencyFunc = (currency: string) => {

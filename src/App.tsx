@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Calculator from './components/Calculator'
 import BitsCalculator from './components/BitsCalculator'
+import SubCalculator from './components/SubCalculator'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <div className="body">
           <Calculator></Calculator>
           <BitsCalculator></BitsCalculator>
+          <SubCalculator></SubCalculator>
         </div>
       </div>
     </>
